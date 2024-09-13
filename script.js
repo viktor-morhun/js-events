@@ -96,41 +96,21 @@ function makeResizableBlock() {
 
   resizerElement.addEventListener('mousedown', (e) => {
     e.preventDefault();
-    console.log(e);
-    console.log(resizeBlockElement.getBoundingClientRect());
     elementWidth = resizeBlockElement.getBoundingClientRect().left;
     elementHeight = resizeBlockElement.getBoundingClientRect().top;
-
-    window.addEventListener('mousemove', debounceResizing);
+    window.addEventListener('mousemove', resizeElement);
     window.addEventListener('mouseup', stopResizing);
   });
 
   function resizeElement(e) {
-    console.log('resizing');
-    resizeBlockElement.style.width = e.clientX - elementWidth + 'px';
-    resizeBlockElement.style.height = e.clientY- elementHeight + 'px';
+    resizeBlockElement.style.width =  e.clientX - elementWidth + 'px';
+    resizeBlockElement.style.height = e.clientY - elementHeight + 'px';
   }
 
   function stopResizing() {
-    console.log('stop');
     window.removeEventListener('mousemove', resizeElement);
+    window.removeEventListener('mouseup', stop);
   }
-
-
-  function debounce_func(func, timeout = 8) {
-    let timer;
-    return (...args) => {
-      if (!timer) {
-        func.apply(this, args);
-      }
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        timer = undefined;
-      }, timeout);
-    };
-  }
-
-  const debounceResizing = debounce_func((e) => resizeElement(e));
 }
 
 makeResizableBlock();
