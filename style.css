@@ -6,8 +6,6 @@
 
 body {
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  color: #333;
   background-color: #F5F5F7;
   padding: 32px;
   line-height: 1.6;
@@ -43,7 +41,7 @@ body {
   right: 0px;
 }
 .container .resizer:hover {
-  cursor: pointer;
+  cursor: nwse-resize;
 }
 
 #text-block {
@@ -57,12 +55,14 @@ textarea {
   border: 1px solid #D2D2D7;
   padding: 16px;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 400;
   border-radius: 12px;
   outline: none;
   resize: none;
   transition: border 0.3s ease;
   display: block;
+  line-height: inherit;
 }
 textarea:focus {
   border-color: #007AFF;
