@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HW - Events</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW - Events</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js" defer></script>
+  </head>
+  <body id="body">
+    <main>
+      <div class="container" id="text-block">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Harum magnam consequatur explicabo, tempora porro ratione
+        velit reiciendis quibusdam facilis quod autem ab quidem, hic placeat
+        accusamus repellendus ea earum esse! Iste nihil laborum facilis magnam.
+        Hic dolores dicta adipisci qui.
+      </div>
+      <textarea name="text" id="text-area" class="container hidden-element">
+
+      </textarea>
+
+      <table>
+        <caption>
+          Products
+        </caption>
+        <thead>
+          <tr id="tableHeading">
+            <th scope="col" id="productName">Name</th>
+            <th scope="col" id="productPrice">Price</th>
+            <th scope="col" id="productId">Id</th>
+          </tr>
+        </thead>
+        <tbody id="tableContent">        
+        </tbody>
+      </table>
+
+      <div class="container" id="resizeBlock">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Harum magnam consequatur explicabo, tempora porro ratione
+        velit reiciendis quibusdam facilis quod autem ab quidem, hic placeat
+        accusamus repellendus ea earum esse! Iste nihil laborum facilis magnam.
+        Hic dolores dicta adipisci qui.
+        <div class="resizer" id="resizer" title="resizer"></div>
+      </div>
+    </main>
+  </body>
 </html>
