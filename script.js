@@ -87,3 +87,30 @@ productsTable.setProductsData();
 
 
 //Task 3
+
+function makeResizableBlock() {
+  const resizeBlockElement = document.getElementById('resizeBlock');
+  const resizerElement = document.getElementById('resizer');
+
+  resizerElement.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+    console.log(e);
+    console.log(resizeBlockElement.getBoundingClientRect());
+
+    window.addEventListener('mousemove', resizeElement);
+    window.addEventListener('mouseup', stopResizing);
+  });
+
+  function resizeElement(e) {
+    console.log('resizing');
+    resizeBlockElement.style.width = e.clientX - resizeBlockElement.getBoundingClientRect().left + 'px';
+    resizeBlockElement.style.height = e.clientY- resizeBlockElement.getBoundingClientRect().top + 'px';
+  }
+
+  function stopResizing() {
+    console.log('stop');
+    window.removeEventListener('mousemove', resizeElement);
+  }
+}
+
+makeResizableBlock();
